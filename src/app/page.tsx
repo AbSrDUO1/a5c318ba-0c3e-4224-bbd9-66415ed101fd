@@ -4,8 +4,6 @@ import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 import SimpleHero from '@/components/sections/layouts/hero/SimpleHero';
 import MinimalAbout from '@/components/sections/layouts/about/MinimalAbout';
 import PricingBento from '@/components/bento/PricingBento';
-import Slider from '@/components/sections/layouts/testimonials/Slider';
-import ContactForm from '@/components/forms/ContactForm';
 
 const mockTestimonials = [
   { quote: "Great service!", name: "John Doe", company: "Company A" },
@@ -44,10 +42,6 @@ export default function Home() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         />
       </section>
-      <section id="testimonials" className="bg-gradient-to-b from-white to-[#F4F7FF]">
-        <h2 className="text-3xl font-bold mb-10">What Our Customers Say</h2>
-        <Slider testimonials={mockTestimonials} />
-      </section>
       <section id="terms" className="bg-white">
         <h2 className="text-2xl font-bold">Terms of Service</h2>
         <p className="mt-2">Summary of terms and accessibility note goes here.</p>
@@ -58,7 +52,7 @@ export default function Home() {
       </section>
       <section id="contact" className="bg-white">
         {/* Inline contact form component */}
-        <ContactForm />
+        {/* <ContactForm /> */}
       </section>
     </SiteThemeProvider>
   );
