@@ -34,9 +34,9 @@ export default function Home() {
 
       <section id="features" className="bg-gradient-to-b from-white to-F6F9FF py-18">
         <Bento items={[
-          { title: 'Feature One', description: 'Benefit of the first feature', icon: <img src="/images/logo.svg" alt="Feature One Icon" /> },
-          { title: 'Feature Two', description: 'Benefit of the second feature', icon: <img src="/images/logo.svg" alt="Feature Two Icon" /> },
-          { title: 'Feature Three', description: 'Benefit of the third feature', icon: <img src="/images/logo.svg" alt="Feature Three Icon" /> }
+          { title: 'Feature One', description: 'Benefit of the first feature' },
+          { title: 'Feature Two', description: 'Benefit of the second feature' },
+          { title: 'Feature Three', description: 'Benefit of the third feature' }
         ]} className="flex" />
       </section>
 
