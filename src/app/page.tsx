@@ -5,15 +5,10 @@ import SimpleHero from '@/components/sections/layouts/hero/SimpleHero';
 import MinimalAbout from '@/components/sections/layouts/about/MinimalAbout';
 import PricingBento from '@/components/bento/PricingBento';
 
-const mockTestimonials = [
-  { quote: "Great service!", name: "John Doe", company: "Company A" },
-  { quote: "Exceptional experience!", name: "Jane Smith", company: "Company B" },
-];
-
 const mockPricing = [
-  { badge: "Basic", price: "$10/mo", features: ["Feature 1", "Feature 2"], handleClick: () => {} },
-  { badge: "Pro", price: "$20/mo", features: ["Feature 1", "Feature 2", "Feature 3"], handleClick: () => {} },
-  { badge: "Enterprise", price: "$50/mo", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], handleClick: () => {} },
+  { badge: "Basic", price: "$10/mo", features: ["Feature 1", "Feature 2"] },
+  { badge: "Pro", price: "$20/mo", features: ["Feature 1", "Feature 2", "Feature 3"] },
+  { badge: "Enterprise", price: "$50/mo", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"] },
 ];
 
 export default function Home() {

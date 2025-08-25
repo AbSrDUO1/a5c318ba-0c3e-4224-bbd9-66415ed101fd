@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${interTight.variable} antialiased`} style="background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);"
+        className={`${interTight.variable} antialiased`} style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%)'}}
       >
         {children}
       </body>
