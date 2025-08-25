@@ -1,70 +1,64 @@
-"use client";
+"use client"
+
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 import SimpleHero from '@/components/sections/layouts/hero/SimpleHero';
-import ContentTextbox from '@/components/textbox/ContentTextbox';
-import Bento from '@/components/bento/Bento';
-import RegularFAQ from '@/components/sections/layouts/faq/RegularFAQ';
 import MinimalAbout from '@/components/sections/layouts/about/MinimalAbout';
+import PricingBento from '@/components/bento/PricingBento';
+import Slider from '@/components/sections/layouts/testimonials/Slider';
+import ContactForm from '@/components/forms/ContactForm';
+
+const mockTestimonials = [
+  { quote: "Great service!", name: "John Doe", company: "Company A" },
+  { quote: "Exceptional experience!", name: "Jane Smith", company: "Company B" },
+];
+
+const mockPricing = [
+  { badge: "Basic", price: "$10/mo", features: ["Feature 1", "Feature 2"], handleClick: () => {} },
+  { badge: "Pro", price: "$20/mo", features: ["Feature 1", "Feature 2", "Feature 3"], handleClick: () => {} },
+  { badge: "Enterprise", price: "$50/mo", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], handleClick: () => {} },
+];
 
 export default function Home() {
   return (
     <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 1, textAnimation: 'slide' }}>
-      <section id="hero" className="bg-white py-18">
-        <SimpleHero
+      <section id="hero" className="bg-white">
+        <SimpleHero 
           title="Welcome to Our SaaS"
-          description="Your solution for managing projects efficiently."
+          description="The best solution for your needs."
           primaryButtonText="Get Started"
           secondaryButtonText="Learn More"
         />
       </section>
-
-      <section id="about-us" className="bg-F9FBFF py-18">
-        <ContentTextbox
-          title={<h2 className="font-poppins text-3xl">About Us</h2>}
-          description={<p className="text-sm">We are a dedicated team focused on providing the best project management solution.</p>}
-        >
-          <div className="flex flex-col gap-4">
-            <Bento items={[
-              { title: 'Reliable', description: 'Our service is reliable and efficient.' },
-              { title: 'User-Friendly', description: 'Designed for all users, regardless of skill level.' },
-              { title: '24/7 Support', description: 'Support is available around the clock.' }
-            ]} className="flex" />
-          </div>
-        </ContentTextbox>
+      <section id="features" className="bg-soft-noise">
+        <div className="max-w-6xl mx-auto py-20">
+          <h2 className="text-3xl font-bold mb-10">Features</h2>
+          {/* Feature blocks go here */}
+        </div>
       </section>
-
-      <section id="features" className="bg-gradient-to-b from-white to-F6F9FF py-18">
-        <Bento items={[
-          { title: 'Feature One', description: 'Benefit of the first feature' },
-          { title: 'Feature Two', description: 'Benefit of the second feature' },
-          { title: 'Feature Three', description: 'Benefit of the third feature' }
-        ]} className="flex" />
+      <section id="about" className="bg-[#F7F9FF]">
+        <MinimalAbout description="We are a company dedicated to providing top-notch SaaS solutions." />
       </section>
-
-      <section id="terms" className="bg-white py-18">
-        <ContentTextbox
-          title={<h3 className="font-poppins text-xl">Terms and Conditions</h3>}
-          description={<p className="text-sm">Click here to read our full terms and conditions.</p>}
+      <section id="pricing" className="bg-white">
+        <PricingBento 
+          items={mockPricing}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         />
       </section>
-
-      <section id="policy" className="bg-white py-18">
-        <ContentTextbox
-          title={<h3 className="font-poppins text-xl">Privacy Policy</h3>}
-          description={<p className="text-sm">We value your privacy. Read our privacy policy.</p>}
-        />
+      <section id="testimonials" className="bg-gradient-to-b from-white to-[#F4F7FF]">
+        <h2 className="text-3xl font-bold mb-10">What Our Customers Say</h2>
+        <Slider testimonials={mockTestimonials} />
       </section>
-
-      <section id="cta" className="bg-white py-18">
-        <ContentTextbox
-          title={<h3 className="font-poppins text-xl">Ready to get started?</h3>}
-          description={<p className="text-sm">Join us and start managing your projects more effectively!</p>}
-        >
-          <form className="flex flex-col gap-4">
-            <input type="email" placeholder="Your Email" className="border rounded p-2" required />
-            <button type="submit" className="bg-blue-500 text-white rounded p-2">Sign Up</button>
-          </form>
-        </ContentTextbox>
+      <section id="terms" className="bg-white">
+        <h2 className="text-2xl font-bold">Terms of Service</h2>
+        <p className="mt-2">Summary of terms and accessibility note goes here.</p>
+      </section>
+      <section id="policy" className="bg-white">
+        <h2 className="text-2xl font-bold">Privacy Policy</h2>
+        <p className="mt-2">Privacy policy summary and link to full policy goes here.</p>
+      </section>
+      <section id="contact" className="bg-white">
+        {/* Inline contact form component */}
+        <ContactForm />
       </section>
     </SiteThemeProvider>
   );
